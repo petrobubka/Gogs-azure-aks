@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: petrobubkagogsazureaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petrobubkagogsazureaks
+  template:
+    metadata:
+      labels:
+        app: petrobubkagogsazureaks 
+    spec:
+      containers:
+        - name: petrobubkagogsazureaks 
+          image: gogsregistry.azurecr.io/petrobubkagogsazureaks
+          ports:
+          - containerPort: 80
